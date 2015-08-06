@@ -39,11 +39,11 @@ require_once(STYLESHEETPATH . '/inc/related-resources-widget.php');
 // Query resources
 require_once(STYLESHEETPATH . '/inc/query-resources-widget.php');
 
-// Related recent news
-require_once(STYLESHEETPATH . '/inc/od-related-recent-news-widget.php');    
+// Related recent news                                                        
+require_once(STYLESHEETPATH . '/inc/od-related-recent-news-widget.php');     
 
-// Mekong Floods
-require_once(STYLESHEETPATH . '/inc/mekong-floods.php');
+// Mekong region storms and floods
+require_once(STYLESHEETPATH . '/inc/mekong-region-storms-and-floods.php');
 
 // Advanced nav
 require_once(STYLESHEETPATH . '/inc/advanced-navigation.php');
@@ -66,8 +66,8 @@ function opendev_setup_theme() {
   'after_title' => '</h2>'
  ));
   register_sidebar(array(
-  'name' => __('Mekong Floods sidebar', 'opendev'),
-  'id' => 'mekong-floods',
+  'name' => __('Mekong Storms and Floods sidebar', 'opendev'),
+  'id' => 'mekong-storm-flood',
   'before_title' => '<h2 class="widget-title">',
   'after_title' => '</h2>'
  ));
