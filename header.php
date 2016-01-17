@@ -246,7 +246,6 @@
 		          <li class="fift <?php if ($country=='thailand') echo 'act'; ?>"><a class="toCkan" data-country="thailand" href="http://pp-thailand.<?php echo $domain;?>" target="_self" id="uid-5"><?php _e("Thailand", "opendev");?></a></li>
 
 		          <li class="last <?php if ($country=='vietnam') echo 'act'; ?>"><a class="toCkan" data-country="vietnam" href="http://pp-vietnam.<?php echo $domain;?>" target="_self" id="uid-5142"><?php _e("Vietnam", "opendev");?></a></li>
-
 		        </ul>
 		      </div>
 
