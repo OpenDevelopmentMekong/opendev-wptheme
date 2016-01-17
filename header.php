@@ -235,17 +235,17 @@
 
 		      <div class="mainNav-inner">
 		        <ul id="mainNavElement" class="level1 clearfix">
-		          <li class="first jtop <?php if ($country=='mekong') echo 'act'; ?>"><a class="toCkan" data-country="mekong" href="http://pp.<?php echo $domain;?>" target="_self" id="uid-2">MEKONG</a></li>
+		          <li class="first jtop <?php if ($country=='mekong') echo 'act'; ?>"><a class="toCkan" data-country="mekong" href="http://pp.<?php echo $domain;?>" target="_self" id="uid-2"><?php _e("Mekong", "opendev");?></a></li>
 
-		          <li class="second <?php if ($country=='cambodia') echo 'act'; ?>"><a class="toCkan" data-country="cambodia" href="http://pp-cambodia.<?php echo $domain;?>" id="uid-3">CAMBODIA</a></li>
+		          <li class="second <?php if ($country=='cambodia') echo 'act'; ?>"><a class="toCkan" data-country="cambodia" href="http://pp-cambodia.<?php echo $domain;?>" id="uid-3"><?php _e("Cambodia", "opendev");?></a></li>
 
-		          <li class="third <?php if ($country=='laos') echo 'act'; ?>"><a class="toCkan" data-country="laos" href="http://pp-laos.<?php echo $domain;?>" target="_self" id="uid-4">LAOS</a></li>
+		          <li class="third <?php if ($country=='laos') echo 'act'; ?>"><a class="toCkan" data-country="laos" href="http://pp-laos.<?php echo $domain;?>" target="_self" id="uid-4"><?php _e("Laos", "opendev");?></a></li>
 
-		          <li class="fourth <?php if ($country=='myanmar') echo 'act'; ?>"><a class="toCkan" data-country="myanmar" href="http://pp-myanmar.<?php echo $domain;?>" target="_self" id="uid-42">MYANMAR</a></li>
+		          <li class="fourth <?php if ($country=='myanmar') echo 'act'; ?>"><a class="toCkan" data-country="myanmar" href="http://pp-myanmar.<?php echo $domain;?>" target="_self" id="uid-42"><?php _e("Myanmar", "opendev");?></a></li>
 
-		          <li class="fift <?php if ($country=='thailand') echo 'act'; ?>"><a class="toCkan" data-country="thailand" href="http://pp-thailand.<?php echo $domain;?>" target="_self" id="uid-5">THAILAND</a></li>
+		          <li class="fift <?php if ($country=='thailand') echo 'act'; ?>"><a class="toCkan" data-country="thailand" href="http://pp-thailand.<?php echo $domain;?>" target="_self" id="uid-5"><?php _e("Thailand", "opendev");?></a></li>
 
-		          <li class="last <?php if ($country=='vietnam') echo 'act'; ?>"><a class="toCkan" data-country="vietnam" href="http://pp-vietnam.<?php echo $domain;?>" target="_self" id="uid-5142">VIETNAM</a></li>
+		          <li class="last <?php if ($country=='vietnam') echo 'act'; ?>"><a class="toCkan" data-country="vietnam" href="http://pp-vietnam.<?php echo $domain;?>" target="_self" id="uid-5142"><?php _e("Vietnam", "opendev");?></a></li>
 
 		        </ul>
 		      </div>
