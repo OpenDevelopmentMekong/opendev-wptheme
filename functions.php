@@ -178,7 +178,8 @@ function opendev_jeo_scripts()
   if (is_home()) {
       wp_enqueue_script('opendev-sticky', get_stylesheet_directory_uri().'/js/sticky-posts.js', array('jeo.markers', 'jquery'), '0.1.2');
   }
-  if (is_page('map-explorer') || is_page('maps') || is_singular('map') || is_home()){
+  if (is_page('map-explorer') || is_page('maps')|| is_home()){
+      wp_enqueue_script('BetterWMS', get_stylesheet_directory_uri() . '/lib/leaflet/L.TileLayer.BetterWMS.js', array('jeo', 'jquery'), '1.0.0');
       wp_enqueue_script('jeo.clearscreen', get_stylesheet_directory_uri() . '/inc/js/clearscreen.js', array('jeo'), '1.0.0');
       wp_enqueue_script('jeo.baselayer', get_stylesheet_directory_uri() . '/inc/js/baselayer.js', array('jeo'), '1.0.0');
   }
@@ -257,7 +258,7 @@ function opendev_styles(){
   wp_enqueue_style('table-pages');
   wp_enqueue_style('sparql');
 
-  if (is_page('map-explorer') || is_page('maps') || is_singular('map') || is_home()){
+  if (is_page('map-explorer') || is_page('maps')|| is_home()){
     wp_enqueue_style('map-explorer');
   }
 
@@ -1566,30 +1567,6 @@ function buildTopTopicNav($lang)
       }
     }
 
-}
-
-function get_law_datasets($ckan_domain,$filter_key,$filter_value){
-  $ckanapi_url = $ckan_domain . "/api/3/action/package_search?q=*:*&fq=type:laws_record&rows=1000";
-  $json = @file_get_contents($ckanapi_url);
-  if ($json === FALSE) return [];
-  $result = json_decode($json, true) ?: [];
-  $datasets = $result["result"]["results"];
-  if (isset($filter_key) && isset($filter_value)){
-    foreach ($datasets as $key => $dataset){
-      if ( !isset($dataset[$filter_key])){
-        unset($datasets[$key]);
-      }else{
-        if (is_array($dataset[$filter_key])){
-          if (!in_array($filter_value,$dataset[$filter_key])){
-            unset($datasets[$key]);
-          }
-        }else if ($dataset[$filter_key] != $filter_value){
-          unset($datasets[$key]);
-        }
-      }
-    }
-  }
-  return $datasets;
 }
 
 function get_metadata_info_of_dataset_by_id($ckan_domain,$ckan_dataset_id, $individual_layer='', $atlernative_links = 0, $showing_fields =""){
