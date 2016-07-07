@@ -185,8 +185,8 @@ class OpenDev_InteractiveMap {
         </div><!-- interactive-map" -->
 
         <?php //show legend box
-		display_legend_container();
-        display_layer_information($layers);
+		      display_legend_container();
+          display_layer_information($layers);
         ?>
 
         <script type="text/javascript">
@@ -221,7 +221,7 @@ class OpenDev_InteractiveMap {
             });
             // End Resize
         })(jQuery);
-        </script> 
+        </script>
     	<?php
     	$html = ob_get_clean();
     	return $html;
