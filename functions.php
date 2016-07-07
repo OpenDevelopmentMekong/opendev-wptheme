@@ -178,9 +178,12 @@ function opendev_jeo_scripts()
   if (is_home()) {
       wp_enqueue_script('opendev-sticky', get_stylesheet_directory_uri().'/js/sticky-posts.js', array('jeo.markers', 'jquery'), '0.1.2');
   }
-  if (is_page('map-explorer') || is_page('maps')|| is_home()){
+  if (is_page('map-explorer') || is_page('maps') || is_singular('map') || is_home()){
+      wp_enqueue_script('BetterWMS', get_stylesheet_directory_uri() . '/lib/leaflet/L.TileLayer.BetterWMS.js', array('jeo', 'jquery'), '1.0.0');
       wp_enqueue_script('jeo.clearscreen', get_stylesheet_directory_uri() . '/inc/js/clearscreen.js', array('jeo'), '1.0.0');
       wp_enqueue_script('jeo.baselayer', get_stylesheet_directory_uri() . '/inc/js/baselayer.js', array('jeo'), '1.0.0');
+      wp_enqueue_script('mapping-script', get_stylesheet_directory_uri() . '/inc/js/mapping-script.js', array('jeo'), '1.0.0');
+
   }
   wp_enqueue_script('opendev-mCustomScrollbar', get_stylesheet_directory_uri().'/js/jquery.mCustomScrollbar.concat.min.js', array('jquery'), '3.1.12');
 }
@@ -199,7 +202,7 @@ add_action( 'admin_enqueue_scripts', 'opendev_jeo_admin_scripts' );
 function dataTable_scripts()
 {
 
-  if( !is_page( array( 'map-explorer', 'maps', 'home' )) and !is_home()){
+  if( !is_page( array( 'map-explorer', 'maps', 'home' )) && !is_home() && !is_singular('map') ){
     wp_register_style('dataTables-css', get_stylesheet_directory_uri().'/lib/dataTables/css/jquery.dataTables.min.css');
     wp_register_style('dataTables-responsive-css', get_stylesheet_directory_uri().'/lib/dataTables/css/responsive.dataTables.css');
     /*wp_register_style('dataTables-fixedHeader-css', get_stylesheet_directory_uri().'/lib/dataTables/css/fixedHeader.dataTables.min.css');*/
@@ -244,7 +247,7 @@ function opendev_styles(){
   wp_register_style('map-explorer',  $css_base.'map_explorer.css');
   wp_register_style('sparql',  $css_base.'sparql.css');
 
-  if( !is_page( array( 'map-explorer', 'maps', 'home' )) and !is_home()){
+  if( !is_page( array( 'map-explorer', 'maps', 'home' )) && !is_home() && !is_singular('map') ){
     wp_register_style('table-pages',  $css_base.'table-pages.css');
   }
 
@@ -257,7 +260,7 @@ function opendev_styles(){
   wp_enqueue_style('table-pages');
   wp_enqueue_style('sparql');
 
-  if (is_page('map-explorer') || is_page('maps')|| is_home()){
+  if (is_page('map-explorer') || is_page('maps') || is_singular('map') || is_home()){
     wp_enqueue_style('map-explorer');
   }
 
@@ -1791,6 +1794,8 @@ function getMultilingualValueOrFallback($field,$lang){
 // include backend layer interface for adding wms layer into map explorer of child theme
 add_action( 'after_setup_theme', function() {
     include(STYLESHEETPATH . '/inc/layers.php');
+    // Embed functionality
+    //include(STYLESHEETPATH . '/inc/map-embed.php');
 }, 42 );
 
 

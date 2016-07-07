@@ -1,12 +1,13 @@
 
 /*map explorer*/
 body.page-template-page-map-explorer{overflow: hidden;}
-.page-template-page-map-explorer #wrap-feedback{ display: none;}
-.page-template-page-map-explorer #notification-message{ display: none; }
-.page-template-page-map-explorer #colophon{ display: none; }
-.page-template-page-map-explorer #main-breadcrumb{  display: none; }
-.page-template-page-map-explorer .interactive-map .fullscreen-map,
-.page-template-page-map-explorer .fullscreen-map.map-container {
+#wrap-feedback{ display: none;}
+#notification-message{ display: none; }
+#colophon{ display: none; }
+#main-breadcrumb{ display: none; }
+.single-map #main-breadcrumb{ display: block; }
+.interactive-map .fullscreen-map,
+.fullscreen-map.map-container {
   bottom: 0;
   height: auto !important;
   left: 0;
@@ -17,22 +18,29 @@ body.page-template-page-map-explorer{overflow: hidden;}
   z-index: 9999999;
 }
 
-.page-template-page-map-explorer .interactive-map .map-container .leaflet-left{
+.interactive-map .map-container .leaflet-left{
     left: 0;
 }
-.page-template-page-map-explorer .interactive-map .map-container .leaflet-top{
+.interactive-map .map-container .leaflet-top{
     top: 40px;
 }
-.page-template-page-map-explorer .interactive-map .map-container .leaflet-top .jeo-geocode{
+.interactive-map .map-container .leaflet-top .jeo-geocode{
     display: none;
 }
-.page-template-page-map-explorer .interactive-map .map-container .leaflet-right .wax-legends{
+.interactive-map .map-container .leaflet-right .wax-legends{
   display: none!important;
 }
-.page-template-page-map-explorer #clear{
+#clear{
   display: none;
 }
-
+.interactive-map {
+  border: 0;
+  box-shadow: none;
+  position: relative;
+  top: 0;
+  height: 70%;
+  margin-bottom: 2em;
+}
 .page-template-page-map-explorer .interactive-map{
   border: 0;
   box-shadow: none;
@@ -51,7 +59,10 @@ body.page-template-page-map-explorer{overflow: hidden;}
   top: 0;
   margin: 0;
 }
-.page-template-page-map-explorer .category-map-layers{
+.single-map .map-container{
+  height: 100%;
+}
+.category-map-layers{
   top: 10px;
   position: absolute;
   z-index: 100;
@@ -61,7 +72,7 @@ body.page-template-page-map-explorer{overflow: hidden;}
   /*min-height: 100%;  real browsers */
   right: 10px;
   }
-.page-template-page-map-explorer .interactive-map-layers {
+.interactive-map-layers {
   min-height: 100%; /* real browsers*/
   width: 100%;
   background: white;
@@ -83,7 +94,7 @@ body.page-template-page-map-explorer{overflow: hidden;}
 .jeo-clearscreen{
   display: none;
 }
-.page-template-page-map-explorer .jeo-clearscreen{
+.jeo-clearscreen{
   display: block;
 }
 .leaflet-control .hide-all-boxes-on-map {
@@ -96,7 +107,7 @@ body.page-template-page-map-explorer{overflow: hidden;}
     background-position: -28px 0px;
     background-repeat: no-repeat;
 }
-/*.page-template-page-map-explorer .interactive-map-layers svg{
+/*.interactive-map-layers svg{
   width: 13px;
   height: 13px;
   float: right;
@@ -151,12 +162,14 @@ body.page-template-page-map-explorer{overflow: hidden;}
  margin: 0 10px 0 0;
  color: #999;
 }
-.interactive-map .interactive-map-layers ul li ul {
+.interactive-map .interactive-map-layers ul li ul,
+.interactive-map .interactive-map-layers .cat-layers{
  margin-top: 0;
  margin-left: 15px;
  background: #f7f7f7;
 }
-.interactive-map .interactive-map-layers  ul li ul li {
+.interactive-map .interactive-map-layers  ul li ul li,
+.interactive-map .interactive-map-layers .layer-item {
  border-bottom: 0;
  border-top: 1px solid #eee;
  padding: 8px 8px 8px 0;
@@ -172,7 +185,8 @@ body.page-template-page-map-explorer{overflow: hidden;}
 .interactive-map .interactive-map-layers  ul li ul li ul{
   border: none !important;
 }
-.interactive-map .interactive-map-layers  ul li ul li a {
+.interactive-map .interactive-map-layers  ul li ul li a,
+.interactive-map .interactive-map-layers .layer-item a {
  padding: 8px 0;
 }
 .interactive-map .interactive-map-layers  ul li ul li ul {
@@ -566,4 +580,23 @@ div.cartodb-legend-stack{
   border-right: 0;
   padding-right: 10;
   margin-right: 0;
+}
+.news-marker{
+    padding: 5px 12px;
+    background: #eee;
+    color: #000;
+    border-top: solid 1px #aaa;
+}
+.news-marker label:hover{
+  cursor: pointer;
+}
+.news-marker .news-marker-toggle{
+    margin-right: 10px;
+    float: left;
+}
+.single-map .section-title{
+  border: 0
+}
+.single-map .move-up {
+    margin-top: -4em;
 }
