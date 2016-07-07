@@ -525,6 +525,11 @@
               $excerpt =  $post->excerpt;//get content by langauge
           }
           $in_category = get_the_terms( $post->ID, 'layer-category' );
+          if ( (CURRENT_LANGUAGE != "en") ){
+              $layer_legend = get_post_meta( $post->ID , '_layer_legend_localization', true);
+          }else {
+              $layer_legend = get_post_meta( $post->ID , '_layer_legend', true);
+          }
           $layer = array(
            'ID' => $post->ID,
            'title' => get_the_title(),
@@ -535,9 +540,8 @@
            //'download_url_localization' => get_post_meta($post->ID, '_layer_download_link_localization', true),
            //'profilepage_url' => get_post_meta($post->ID, '_layer_profilepage_link', true),
            //'profilepage_url_localization' => get_post_meta($post->ID, '_layer_profilepage_link_localization', true),
-           'type' => $type//,
-           //'legend' => get_post_meta($post->ID, '_layer_legend', true),
-           //'legend_localization' => get_post_meta($post->ID, '_layer_legend_localization', true)
+           'type' => $type
+           //, 'legend' => $layer_legend
           );
 
           if($type == 'tilelayer') {
