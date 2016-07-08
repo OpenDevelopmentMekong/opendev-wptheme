@@ -159,7 +159,7 @@ if (function_exists('qtranxf_getLanguage')) {
                           }
                       }
                       if (isset($source) && $source != '') {
-                          if (substr($source, 0, 7) != 'http://') {
+                          if (false === strpos($source, '://')) {
                               $news_source_info .= '<a href="http://'.$source.'" target="_blank">http://'.$source.'</a>';
                           } else {
                               $news_source_info .= '<a href="'.$source.'" target="_blank">'.$source.'</a>';
