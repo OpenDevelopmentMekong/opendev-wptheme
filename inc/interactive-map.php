@@ -100,7 +100,7 @@ class OpenDev_InteractiveMap {
                     /*// get all layers form all categories using wp_list_categories(), exclude posts in baselayer cat
                     // wp_list_categories(array('taxonomy' => 'layer-category', 'title_li' => '', 'depth'=> 2, 'exclude'=> $cat_baselayers_id)); //43002  */
                     foreach( $terms_layer as $term ) {
-                       $args_layer = array(
+                        $args_layer = array(
                            'post_type' => 'map-layer',
                            'orderby'   => 'name',
                            'order'   => 'asc',
@@ -112,59 +112,41 @@ class OpenDev_InteractiveMap {
                                                  'include_children' => false
                                                )
                                              )
-                       );
-                       $query_layer = new WP_Query( $args_layer );
-                       ?>
-                       <li class="cat-item cat-item-<?php the_ID(); ?>" id="post-<?php the_ID(); ?>">
-                           <a href="#<?php //the_permalink(); ?>"><?php echo $term->name ?></a>
-                            <?php
-                            if($query_layer->have_posts() ){
-                              echo "<ul class='cat-layers switch-layers'>";
-                              while ( $query_layer->have_posts() ) : $query_layer->the_post();
-                                  display_layer_as_menu_item_on_mapNavigation(get_the_ID());
-                              /*
-                              ?>
-                                <li class="layer-item" data-layer="<?php the_ID(); ?>" id="post-<?php the_ID(); ?>">
-                                    <img class="list-loading" src="<?php echo get_stylesheet_directory_uri() ?>/img/loading-map.gif">
-                                    <span class="list-circle-active"></span>
-                                    <span class="list-circle-o"></span>
-                                    <span class="layer-item-name"><?php the_title(); ?></span>
-                                    <?php
-                                    if ( (CURRENT_LANGUAGE != "en") ){
-                                      $layer_download_link = get_post_meta(get_the_ID(), '_layer_download_link_localization', true);
-                                      $layer_profilepage_link = get_post_meta(get_the_ID(), '_layer_profilepage_link_localization', true);
-                                    }else {
-                                      $layer_download_link = get_post_meta(get_the_ID(), '_layer_download_link', true);
-                                      $layer_profilepage_link = get_post_meta(get_the_ID(), '_layer_profilepage_link', true);
-                                    }
+                        );
+                        $query_layer = new WP_Query( $args_layer );
+                        $layer_items = '';
+                        $count_items_of_main_cat = 0;
+                        $main_category_li = '<li class="cat-item cat-item-<?php the_ID(); ?>" id="post-'.get_the_ID().'"><a href="#">'.$term->name.'</a>';
+                        if($query_layer->have_posts() ){
+                            $cat_layer_ul= "<ul class='cat-layers switch-layers'>";
+                                while ( $query_layer->have_posts() ) : $query_layer->the_post();
+                                    if(posts_for_both_and_current_languages(get_the_ID(), CURRENT_LANGUAGE)){
+                                        $count_items_of_main_cat++;
+                                        $layer_items .= display_layer_as_menu_item_on_mapNavigation(get_the_ID(), 0);
+                                     }
+                                endwhile;
+                                // use reset postdata to restore orginal query
+                                wp_reset_postdata();
 
-                                    if($layer_download_link!=""){ ?>
-                                      <a class="download-url" href="<?php echo $layer_download_link; ?>" target="_blank"><i class="fa fa-arrow-down"></i></a>
-                                      <a class="toggle-info" alt="Info" href="#"><i id="<?php the_ID(); ?>" class="fa fa-info-circle"></i></a>
-                                    <?php
-                                    }else if(get_the_content()!= ""){ ?>
-                                      <a class="toggle-info" alt="Info" href="#"><i id="<?php the_ID(); ?>" class="fa fa-info-circle"></i></a>
-                                    <?php
-                                    }
-                                    if($layer_profilepage_link!=""){ ?>
-                                      <a class="profilepage_link" href="<?php echo $layer_profilepage_link; ?>" target="_blank"><i class="fa fa-table"></i></a>
-                                    <?php } ?>
-                                </li>
-                              <?php */
-                              endwhile;
-                              echo "</ul>";
-                            } //$query_layer->have_posts
-                              $children_term = get_terms($layer_taxonomy, array('parent' => $term->term_id, 'hide_empty' => 0, 'orderby' => 'name', ) );
-                            if ( !empty($children_term) ) {
-                              echo '<ul class="children">';
-                                walk_child_category_by_post_type( $children_term, "map-layer", "", 0 );
-                              echo '</ul>';
+                            $cat_layer_close_ul =  "</ul>";
+                        } //$query_layer->have_posts
+                        $children_term = get_terms($layer_taxonomy, array('parent' => $term->term_id, 'hide_empty' => 0, 'orderby' => 'name', ) );
+                        if ( !empty($children_term) ) {
+                            $sub_cats = walk_child_category_by_post_type( $children_term, "map-layer", "", 0 );
+                            if ($sub_cats !=""){
+                                $count_items_of_main_cat++;
                             }
-                            ?>
+                        }
+                        $main_category_close = '</li>';
 
-                       </li>
-                     <?php // use reset postdata to restore orginal query
-                     wp_reset_postdata();
+                        if($count_items_of_main_cat > 0){ //if layers and sub-cats exist
+                         echo  $main_category_li;
+                             echo $cat_layer_ul; 
+                                echo $layer_items;
+                             echo $cat_layer_close_ul ;
+                             echo $sub_cats;
+                         echo $main_category_close_li;
+                        }
                     }//foreach
                     echo '</ul>'; //ul: class="categories"
                   echo '</div>'; //interactive-map-layers dropdown

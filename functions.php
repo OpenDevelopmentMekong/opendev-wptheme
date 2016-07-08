@@ -735,6 +735,8 @@ function posts_for_both_and_current_languages($postID, $current_lang = "en", $ta
         return true;
     }else if (has_term( $site_language, $taxonomy, $postID )){
         return true;
+    }else if ( !taxonomy_exists($taxonomy)){
+        return true;
     }
     return false;
 }
@@ -1310,33 +1312,7 @@ function print_category_by_post_type( $category, $post_type ="post", $current_ca
       while ( $query_get_post->have_posts() ) : $query_get_post->the_post();
           if(posts_for_both_and_current_languages(get_the_ID(), CURRENT_LANGUAGE)){
             $count_layer_items++;
-            $layer_items .= '<li class="layer-item" data-layer="'.get_the_ID().'" id="post-'.get_the_ID().'">
-              <img class="list-loading" src="'. get_stylesheet_directory_uri(). '/img/loading-map.gif">
-              <span class="list-circle-active"></span>
-              <span class="list-circle-o"></span>
-              <span class="layer-item-name">'.get_the_title().'</span>';
-
-              if ( (CURRENT_LANGUAGE != "en") ){
-                $layer_download_link = get_post_meta(get_the_ID(), '_layer_download_link_localization', true);
-                $layer_profilepage_link = get_post_meta(get_the_ID(), '_layer_profilepage_link_localization', true);
-              }else {
-                $layer_download_link = get_post_meta(get_the_ID(), '_layer_download_link', true);
-                $layer_profilepage_link = get_post_meta(get_the_ID(), '_layer_profilepage_link', true);
-              }
-
-              if($layer_download_link!=""){
-                 $layer_items .= '
-                      <a class="download-url" href="'.$layer_download_link.'" target="_blank"><i class="fa fa-arrow-down"></i></a>
-                      <a class="toggle-info" alt="Info" href="#"><i id="'. get_the_ID().'" class="fa fa-info-circle"></i></a>';
-              }else if(get_the_content()!= ""){
-                 $layer_items .= '
-                      <a class="toggle-info" alt="Info" href="#"><i id="'. get_the_ID().'" class="fa fa-info-circle"></i></a>';
-              }
-              if($layer_profilepage_link!=""){
-                 $layer_items .= '
-                      <a class="profilepage_link" href="'. $layer_profilepage_link.'" target="_blank"><i class="fa fa-table"></i></a>';
-              }
-            $layer_items .= '</li>';
+            $layer_items .= display_layer_as_menu_item_on_mapNavigation(get_the_ID(), 0);
           }
       endwhile;
 
@@ -1389,7 +1365,7 @@ function walk_child_category_by_post_type( $children, $post_type, $current_cat =
           }//foreach
       $print_sub_cat_and_posts = "";
       if($count_items_of_subcat > 0){ //if sub cats have layer items and sub-cats
-          $print_sub_cat_and_posts .= '<ul class="children">';
+          $print_sub_cat_and_posts .= '<ul class="children fffff">';
           $print_sub_cat_and_posts .= $cat_item_and_posts;
           $print_sub_cat_and_posts .= '</ul>';
       }
