@@ -9,7 +9,7 @@
 		//$( ".news-marker input[type=checkbox]" ).on( "click", function(){
 		//$('.news-marker .news-marker-toggle').click(function(){
 		$('.news-marker label').on( "click", '.news-marker-toggle', function(e){
-			$('img.leaflet-marker-icon').toggle();
+			$('.leaflet-marker-icon').toggle();
 		});
 		//Hide and show on click the collapse and expend icon
 		$(document).on('click',".hide_show_container h2 > .hide_show_icon, .hide_show_container h5 > .hide_show_icon", function (e) {
@@ -43,7 +43,7 @@
 				});
 			},
 		}).disableSelection();
-	});	
+	});
 	//Loading layers
 	jeo.mapReady(function(map) {
 		var $layers = $('.interactive-map .interactive-map-layers');
