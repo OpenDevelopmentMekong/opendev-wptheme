@@ -179,9 +179,27 @@ function opendev_jeo_scripts()
       wp_enqueue_script('opendev-sticky', get_stylesheet_directory_uri().'/js/sticky-posts.js', array('jeo.markers', 'jquery'), '0.1.2');
   }
   if (is_page('map-explorer') || is_page('maps') || is_singular('map') || is_home()){
+      if ( file_exists( STYLESHEETPATH . '/inc/js/jeo.js')) {
+         wp_deregister_script('jeo');
+         wp_enqueue_script('jeo', get_stylesheet_directory_uri() . '/inc/js/jeo.js', array('mapbox-js', 'underscore', 'jquery'), '0.5.0');
+      }
+      if ( file_exists( STYLESHEETPATH . '/inc/js/leaflet.js')){
+         wp_deregister_script('leaflet');
+      	 wp_register_script('leaflet', get_stylesheet_directory_uri() . '/lib/leaflet/leaflet.js', array(), '0.7.7');
+      }
+      if ( file_exists( STYLESHEETPATH . '/inc/js/leaflet.css')){
+         wp_deregister_style('leaflet');
+         wp_enqueue_style('leaflet', get_stylesheet_directory_uri() . '/lib/leaflet/leaflet.css');
+      }
+      if ( file_exists( STYLESHEETPATH . '/inc/js/fullscreen.js')){
+         wp_deregister_script('jeo.fullscreen');
+         wp_enqueue_script('jeo.fullscreen', get_stylesheet_directory_uri() . '/inc/js/fullscreen.js',array('jeo'), '0.2.0');
+      }
+ 
       wp_enqueue_script('BetterWMS', get_stylesheet_directory_uri() . '/lib/leaflet/L.TileLayer.BetterWMS.js', array('jeo', 'jquery'), '1.0.0');
+
       wp_enqueue_script('jeo.clearscreen', get_stylesheet_directory_uri() . '/inc/js/clearscreen.js', array('jeo'), '1.0.0');
-      wp_enqueue_script('jeo.baselayer', get_stylesheet_directory_uri() . '/inc/js/baselayer.js', array('jeo'), '1.0.0');
+
       wp_enqueue_script('mapping-script', get_stylesheet_directory_uri() . '/inc/js/mapping-script.js', array('jeo'), '1.0.0');
 
   }
@@ -191,11 +209,8 @@ add_action('wp_enqueue_scripts', 'opendev_jeo_scripts', 100);
 
 
 function opendev_jeo_admin_scripts() {
-    if ( file_exists( STYLESHEETPATH . '/inc/js/filter-layers.js'))
+    if ( file_exists( STYLESHEETPATH . '/inc/js/clearscreen.js'))
 			wp_enqueue_script('jeo.clearscreen', get_stylesheet_directory_uri() . '/inc/js/clearscreen.js', array('jeo'), '1.0.0');
-
-    if ( file_exists( STYLESHEETPATH . '/inc/js/baselayer.js'))
-        wp_enqueue_script('jeo.baselayer', get_stylesheet_directory_uri() . '/inc/js/baselayer.js', array('jeo'), '1.0.0');
 }
 add_action( 'admin_enqueue_scripts', 'opendev_jeo_admin_scripts' );
 
