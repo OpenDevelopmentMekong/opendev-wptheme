@@ -17,7 +17,7 @@ function get_law_datasets($ckan_domain,$filter_key,$filter_value){
     $filters[$filter_key] = $filter_value;
   endif;
 
-  return wpckan_get_datasets_filters($ckan_domain,$filters);
+  return wpckan_api_package_search($ckan_domain,$filters);
 
 }
 

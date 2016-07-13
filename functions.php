@@ -195,7 +195,7 @@ function opendev_jeo_scripts()
          wp_deregister_script('jeo.fullscreen');
          wp_enqueue_script('jeo.fullscreen', get_stylesheet_directory_uri() . '/inc/js/fullscreen.js',array('jeo'), '0.2.0');
       }
- 
+
       wp_enqueue_script('BetterWMS', get_stylesheet_directory_uri() . '/lib/leaflet/L.TileLayer.BetterWMS.js', array('jeo', 'jquery'), '1.0.0');
 
       wp_enqueue_script('jeo.clearscreen', get_stylesheet_directory_uri() . '/inc/js/clearscreen.js', array('jeo'), '1.0.0');
@@ -1629,7 +1629,7 @@ function get_metadata_info_of_dataset_by_id($ckan_domain,$ckan_dataset_id, $indi
 
   // get ckan record by id
 
-  $get_info_from_ckan = wpckan_get_dataset_by_id($ckan_domain,$ckan_dataset_id);
+  $get_info_from_ckan = wpckan_api_package_show($ckan_domain,$ckan_dataset_id);
   if(!empty($get_info_from_ckan)){
   ?>
     <div class="layer-toggle-info toggle-info toggle-info-<?php echo $individual_layer->ID; ?>">
