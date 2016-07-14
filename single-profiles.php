@@ -706,8 +706,8 @@ function list_reference_documents($ref_docs, $only_title_url =0){
            $ref_doc_name = $ref_doc;
 
           $ref_doc_metadata = wpckan_api_package_search(CKAN_DOMAIN,array('filter_fields' => '{"extras_odm_reference_document":"'.$ref_doc_name.'"}'));
-          if (count($ref_doc_metadata) > 0):
-            foreach ($ref_doc_metadata as $key => $metadata): ?>
+          if (count($ref_doc_metadata['results']) > 0):
+            foreach ($ref_doc_metadata['results'] as $key => $metadata): ?>
                     <li><a target="_blank" href="<?php echo CKAN_DOMAIN . "/dataset/" . $metadata["name"] ?>"><?php echo getMultilingualValueOrFallback($metadata['title_translated'],$lang) ?></a>
                       <?php if ($metadata["type"]=="laws_record" && !(IsNullOrEmptyString($metadata["odm_promulgation_date"]))): ?>
                         <?php   if(CURRENT_LANGUAGE == "kh" || CURRENT_LANGUAGE == "km")
@@ -737,8 +737,8 @@ function list_reference_documents($ref_docs, $only_title_url =0){
           $ref_doc_name = $ref_doc;
 
          $ref_doc_metadata = wpckan_api_package_search(CKAN_DOMAIN,array('filter_fields' => '{"extras_odm_reference_document":"'.$ref_doc_name.'"}'));
-         if (count($ref_doc_metadata) > 0):
-           foreach ($ref_doc_metadata as $key => $metadata): ?>
+         if (count($ref_doc_metadata['results']) > 0):
+           foreach ($ref_doc_metadata['results'] as $key => $metadata): ?>
                <tr>
                  <td class="row-key">
                    <a target="_blank" href="<?php echo CKAN_DOMAIN . "/dataset/" . $metadata["name"] ?>"><?php echo getMultilingualValueOrFallback($metadata['title_translated'],$lang) ?></a></br>
