@@ -44,6 +44,7 @@ function get_law_datasets($ckan_domain,$filter_key,$filter_value){
     }else{
       $laws = get_law_datasets($CKAN_DOMAIN,NULL,NULL);
     }
+    $laws = $laws['results'];
 
     $lang = 'en';
     $headline = $filter_odm_taxonomy;
