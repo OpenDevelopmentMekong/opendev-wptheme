@@ -83,7 +83,7 @@ function get_law_datasets($ckan_domain,$filter_key,$filter_value){
           </thead>
           <tbody>
             <?php foreach ($laws as $law_record): ?>
-              <?php if (!isset($law_record['odm_document_type']) || IsNullOrEmptyString($law_record['odm_document_type'])){
+              <?php if (!in_array('odm_document_type',$law_record) || IsNullOrEmptyString($law_record['odm_document_type'])){
                 continue;
               }?>
               <tr>
