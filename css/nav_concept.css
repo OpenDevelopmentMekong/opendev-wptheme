@@ -564,6 +564,7 @@ div#wrap-feedback {
     left: 0px;
     top: auto;
     bottom: 30px;
+    display: block;
     transform: rotate(0deg);
 }
 a#user_feedback_form {
