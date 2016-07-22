@@ -3,7 +3,7 @@
 body.page-template-page-map-explorer{overflow: hidden;}
 #wrap-feedback{ display: none;}
 #notification-message{ display: none; }
-#colophon{ display: none; }
+.page-template-page-map-explorer #colophon{ display: none; }
 #main-breadcrumb{ display: none; }
 .single-map #main-breadcrumb{ display: block; }
 .interactive-map .fullscreen-map,
