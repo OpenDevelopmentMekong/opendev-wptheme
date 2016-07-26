@@ -75,7 +75,7 @@ function display_layer_as_menu_item_on_mapNavigation($post_ID, $echo =1){
 	  <img class="list-loading" src="'. get_stylesheet_directory_uri(). '/img/loading-map.gif">
 	  <span class="list-circle-active"></span>
 	  <span class="list-circle-o"></span>
-	  <span style="display:none">'.qtranxf_getLanguage().'</span>
+	  <span style="display:none">'.CURRENT_LANGUAGE.' '. qtranxf_getLanguage().'</span>
 	  <span class="layer-item-name">'.$title.'</span>';
 
 	  if ( (CURRENT_LANGUAGE != "en") ){
