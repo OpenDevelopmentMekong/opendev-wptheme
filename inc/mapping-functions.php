@@ -64,13 +64,17 @@ function get_post_meta_of_all_baselayer($num=5, $cat='base-layers', $include_chi
 //display layer menus fixed on right bar
 function display_layer_as_menu_item_on_mapNavigation($post_ID, $echo =1){
 	$get_post = get_post($post_ID);
-		if (function_exists( "qtrans_use")){
+	if (function_exists( "qtrans_use")){
 		$title = qtrans_use(CURRENT_LANGUAGE, $get_post->post_title,false);//get TITLE by langauge
 		$content = qtrans_use(CURRENT_LANGUAGE, $get_post->post_content,false);//get CONTENT by langauge
+		echo "<div style='display:none'>function_exists".CURRENT_LANGUAGE."</div>";
 	}else {
 		$title = $get_post->post_title;
 		$content = $get_post->post_content;
 	}
+	echo "<div style='display:none'>function_exists".qtranxf_getLanguage();
+	print_r($get_post);
+	echo "</div>";
 	$layer_items = '<li class="layer-item '.CURRENT_LANGUAGE.'" data-layer="'.$post_ID.'" id="post-'.$post_ID.'">
 	  <img class="list-loading" src="'. get_stylesheet_directory_uri(). '/img/loading-map.gif">
 	  <span class="list-circle-active"></span>
