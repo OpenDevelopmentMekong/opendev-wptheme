@@ -64,7 +64,7 @@ function get_post_meta_of_all_baselayer($num=5, $cat='base-layers', $include_chi
 //display layer menus fixed on right bar
 function display_layer_as_menu_item_on_mapNavigation($post_ID, $echo =1){
 	$get_post = get_post($post_ID);
-	if (function_exists( qtrans_use)){
+		if (function_exists( "qtrans_use")){
 		$title = qtrans_use(CURRENT_LANGUAGE, $get_post->post_title,false);//get TITLE by langauge
 		$content = qtrans_use(CURRENT_LANGUAGE, $get_post->post_content,false);//get CONTENT by langauge
 	}else {
@@ -152,7 +152,7 @@ function display_layer_information($layers){
 		  }
 
 		  // get post content if has
-		  if (function_exists( qtrans_use)){
+		  if (function_exists( "qtrans_use")){
 			$get_post_content_by_id = qtrans_use(CURRENT_LANGUAGE, $get_post_by_id->post_content,false);
 		  }else{
 			$get_post_content_by_id = $get_post_by_id->post_conten;
@@ -199,7 +199,7 @@ function get_post_meta_of_layer($post_ID, $layer_option = false){
 	  $layer['filtering'] = 'switch';
 	  $layer['hidden'] = 1;
   }
-  if (function_exists(extended_jeo_get_layer)){
+  if (function_exists("extended_jeo_get_layer")){
 	  $layer = array_merge($layer, extended_jeo_get_layer($post_ID)); //added by H.E
   }else {
 	  $layer = array_merge($layer, jeo_get_layer($post_ID));
