@@ -71,7 +71,7 @@ function display_layer_as_menu_item_on_mapNavigation($post_ID, $echo =1){
 		$title = $get_post->post_title;
 		$content = $get_post->post_content;
 	}
-	$layer_items = '<li class="layer-item" data-layer="'.$post_ID.'" id="post-'.$post_ID.'">
+	$layer_items = '<li class="layer-item '.CURRENT_LANGUAGE.'" data-layer="'.$post_ID.'" id="post-'.$post_ID.'">
 	  <img class="list-loading" src="'. get_stylesheet_directory_uri(). '/img/loading-map.gif">
 	  <span class="list-circle-active"></span>
 	  <span class="list-circle-o"></span>
