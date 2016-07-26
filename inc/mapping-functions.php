@@ -67,18 +67,15 @@ function display_layer_as_menu_item_on_mapNavigation($post_ID, $echo =1){
 	if (function_exists( "qtrans_use")){
 		$title = qtrans_use(CURRENT_LANGUAGE, $get_post->post_title,false);//get TITLE by langauge
 		$content = qtrans_use(CURRENT_LANGUAGE, $get_post->post_content,false);//get CONTENT by langauge
-		echo "<div style='display:none'>function_exists".CURRENT_LANGUAGE."</div>";
 	}else {
 		$title = $get_post->post_title;
 		$content = $get_post->post_content;
 	}
-	echo "<div style='display:none'>function_exists".qtranxf_getLanguage();
-	print_r($get_post);
-	echo "</div>";
 	$layer_items = '<li class="layer-item '.CURRENT_LANGUAGE.'" data-layer="'.$post_ID.'" id="post-'.$post_ID.'">
 	  <img class="list-loading" src="'. get_stylesheet_directory_uri(). '/img/loading-map.gif">
 	  <span class="list-circle-active"></span>
 	  <span class="list-circle-o"></span>
+	  <span style="display:none">'.qtranxf_getLanguage().'</span>
 	  <span class="layer-item-name">'.$title.'</span>';
 
 	  if ( (CURRENT_LANGUAGE != "en") ){
