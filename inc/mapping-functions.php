@@ -65,20 +65,20 @@ function get_post_meta_of_all_baselayer($num=5, $cat='base-layers', $include_chi
 function display_layer_as_menu_item_on_mapNavigation($post_ID, $echo =1){
 	$get_post = get_post($post_ID);
 	if (function_exists( "qtrans_use")){
-		$title = qtrans_use(CURRENT_LANGUAGE, $get_post->post_title,false);//get TITLE by langauge
-		$content = qtrans_use(CURRENT_LANGUAGE, $get_post->post_content,false);//get CONTENT by langauge
+		$title = qtrans_use(qtranxf_getLanguage(), $get_post->post_title,false);//get TITLE by langauge
+		$content = qtrans_use(qtranxf_getLanguage(), $get_post->post_content,false);//get CONTENT by langauge
 	}else {
 		$title = $get_post->post_title;
 		$content = $get_post->post_content;
 	}
-	$layer_items = '<li class="layer-item '.CURRENT_LANGUAGE.'" data-layer="'.$post_ID.'" id="post-'.$post_ID.'">
+	$layer_items = '<li class="layer-item '.qtranxf_getLanguage().'" data-layer="'.$post_ID.'" id="post-'.$post_ID.'">
 	  <img class="list-loading" src="'. get_stylesheet_directory_uri(). '/img/loading-map.gif">
 	  <span class="list-circle-active"></span>
 	  <span class="list-circle-o"></span>
-	  <span style="display:none">'.CURRENT_LANGUAGE.' '. qtranxf_getLanguage().'</span>
+	  <span style="display:none">'.qtranxf_getLanguage().' '. qtranxf_getLanguage().'</span>
 	  <span class="layer-item-name">'.$title.'</span>';
 
-	  if ( (CURRENT_LANGUAGE != "en") ){
+	  if ( (qtranxf_getLanguage() != "en") ){
 	  $layer_download_link = get_post_meta($post_ID, '_layer_download_link_localization', true);
 	  $layer_profilepage_link = get_post_meta($post_ID, '_layer_profilepage_link_localization', true);
 	  }else {
@@ -146,7 +146,7 @@ function display_layer_information($layers){
 	   <?php
 	   foreach($layers as $individual_layer){
 		  $get_post_by_id = get_post($individual_layer["ID"]);
-		  if ( (CURRENT_LANGUAGE != "en") ){
+		  if ( (qtranxf_getLanguage() != "en") ){
 			 $get_download_url = str_replace("?type=dataset", "", get_post_meta($get_post_by_id->ID, '_layer_download_link_localization', true));
 		  }else {
 			 $get_download_url = str_replace("?type=dataset", "", get_post_meta($get_post_by_id->ID, '_layer_download_link', true));
@@ -154,7 +154,7 @@ function display_layer_information($layers){
 
 		  // get post content if has
 		  if (function_exists( "qtrans_use")){
-			$get_post_content_by_id = qtrans_use(CURRENT_LANGUAGE, $get_post_by_id->post_content,false);
+			$get_post_content_by_id = qtrans_use(qtranxf_getLanguage(), $get_post_by_id->post_content,false);
 		  }else{
 			$get_post_content_by_id = $get_post_by_id->post_conten;
 		  }
@@ -240,7 +240,7 @@ function get_legend_of_map_by($post_ID = false){
 		$map_layers = get_post_meta($post_ID, '_jeo_map_layers', true);
 		foreach ($map_layers as $key => $lay) {
 		   $post_ID =  $lay['ID'];
-		   if ( (CURRENT_LANGUAGE != "en") ){
+		   if ( (qtranxf_getLanguage() != "en") ){
 			   $layer_legend = get_post_meta($post_ID , '_layer_legend_localization', true);
 		   }else {
 			   $layer_legend = get_post_meta($post_ID , '_layer_legend', true);
@@ -251,7 +251,7 @@ function get_legend_of_map_by($post_ID = false){
 		   }
 		}//foreach
 	}else {
-		if ( (CURRENT_LANGUAGE != "en") ){
+		if ( (qtranxf_getLanguage() != "en") ){
 			$layer_legend = get_post_meta($post_ID , '_layer_legend_localization', true);
 		}else {
 			$layer_legend = get_post_meta($post_ID , '_layer_legend', true);
