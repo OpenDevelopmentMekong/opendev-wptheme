@@ -99,6 +99,14 @@ td{
     color: #3B78C7; /*373c6a;*/
     /*font-style: italic;*/
 }
+
+#mekong-color, .mekong-color{
+    color: #6393D2;  /* #66cc00*/
+}
+#mekong-bgcolor, .mekong-bgcolor{
+    background: #6393D2 !important
+}
+
 .map-sidebar a{
   color: #3B78C7; /*373c6a;*/
 }
