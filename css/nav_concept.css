@@ -48,11 +48,12 @@
 }
 #cNavNew li .level2 {
   top: 29px;
-  background: transparent!important;
+  background: #6393D2 !important; /*transparent*/
   position: static!important;
 }
 #cNavNew li .level2 li{
   line-height: 28px;
+  background: #6393D2;
 }
 #cNavNew li .level2 a {
  /* height: 29px;
