@@ -95,20 +95,16 @@ td{
 }
 
 /******* Image Caption *******/
-.mekong-color{
-    color: #3B78C7; /*373c6a;*/
-    /*font-style: italic;*/
-}
 
 #mekong-color, .mekong-color{
-    color: #6393D2;  /* #66cc00*/
+    color: #0066CC;  /* #0066CC*/
 }
 #mekong-bgcolor, .mekong-bgcolor{
     background: #6393D2 !important
 }
 
 .map-sidebar a{
-  color: #3B78C7; /*373c6a;*/
+  color: #0066CC; /*373c6a;*/
 }
 /*
 .content a{
@@ -116,15 +112,15 @@ td{
   font-weight: bold;
 } */
 a, a:visited{
- color: #3B78C7; /*6393D2, 2774da;*/
+ color: #0066CC; /*6393D2, 2774da;*/
  text-decoration:none
 }
 a:hover{
- color: #373c6a; /*6393D2, 2774da;*/
+ color: #292D56; /*6393D2, 2774da;*/
  text-decoration:underline
 }
 a strong:hover {
- color: #373c6a;
+ color: #0066CC;
  text-decoration:underline
 }
 a.button,
@@ -192,7 +188,7 @@ a.button:hover{
     font-size: 11px;
     line-height: 11px;
     text-decoration: none;
-    color: #333;
+    color: #292D56;
     width: auto;
     text-transform: uppercase;
 }
@@ -474,7 +470,7 @@ a.button:hover{
  font-weight: 600px;
  margin: 15px 0;
  text-transform: uppercase;
- color: #999;
+ color: #888;
 }
 
 #od-head #ms-nav ul li .sub-menu .content ul {
@@ -720,7 +716,7 @@ a.button:hover{
 }
 .post-header .date, .single-post-header .date, .date  {
  font-size: 14px;
- color: #999;
+ color: #888;
  display:inline
 }
 .post-header .icon-news, .single-post-header .icon-news{
@@ -728,13 +724,13 @@ a.button:hover{
 }
 .post-header .news-source, .single-post-header .news-source, .source {
  font-size: 14px;
- color: #999;
+ color: #888;
  display:inline
 }
 .single-post-header .categories, .section-content .post-tags {
  padding-top: 4px;
  font-size: 14px;
- color: #999;
+ color: #888;
 }
 
 .single-post-header .lsf {
@@ -767,7 +763,7 @@ a.button:hover{
 }
 
 .section-title.main-title h3 a {
- color: #999;
+ color: #888;
 }
 
 .section-title.main-title h3 a:hover {
@@ -791,7 +787,7 @@ a.button:hover{
  font-weight: 600;
  margin-right: 10px;
  text-transform: uppercase;
- color: #999;
+ color: #888;
  font-size: 12px;
 }
 
@@ -805,7 +801,7 @@ a.button:hover{
 .query-actions [class^="icon-"],
 .query-actions [class*=" icon-"] {
  margin-right: 5px;
- color: #999;
+ color: #888;
 }
 
 .move-up{
@@ -849,7 +845,7 @@ a.button:hover{
  display: block;
  padding: 10px 15px;
  border-right: 1px solid #dedede;
- color: #999;
+ color: #888;
 }
 
 #main-title-nav ul li a:hover {
@@ -1001,7 +997,7 @@ a.button:hover{
  margin: 0;
 }
 #live-search .results li p.type {
- color: #999;
+ color: #888;
  text-transform:uppercase;
  background: #f4f4f4;
  padding: 5px 0 0 5px;
@@ -1326,7 +1322,7 @@ a.button:hover{
 .sticky-posts .sticky-item.active article p.date {
  font-size: 12px;
  display: block;
- color: #999;
+ color: #888;
  margin-bottom: 5px;
 }
 .sticky-posts .sticky-item article .post-content{
@@ -1969,7 +1965,7 @@ a.button:hover{
   line-height: 20px;
 }
 .sidebar_header{
-  background: #3B78C7
+  background: #6393D2
 }
 .map_headline{
   padding: 5px 15px;
@@ -2024,7 +2020,7 @@ ul.opendev_taxonomy_widget_ul span:hover{
 #related-datasets .group-item h3 {
  text-transform: uppercase;
  font-size: 18px;
- color: #999;
+ color: #888;
  line-height: 18px;
  margin: 0 0 20px;
 }
@@ -2251,7 +2247,7 @@ ul.opendev_taxonomy_widget_ul span:hover{
  float: left;
  font-size: 16px;
  margin: 0 10px 0 0;
- color: #999;
+ color: #888;
 }
 
 #wpckan_archive #wpckan_nav {
@@ -2304,12 +2300,21 @@ ul.opendev_taxonomy_widget_ul span:hover{
  background: #4683D2 none repeat scroll 0% 0%;
 }
 
+
+.widgets #mekong-color, .widgets .mekong-color {
+    color: #0066CC;  /* #0066CC*/
+}
+.widgets #mekong-color:hover, .widgets .mekong-color:hover{
+    color: #292D56;  /* #06323D #0066CC*/
+}
 #sidebar .widgets .widget li a,
 .widget li a {
- text-decoration: none;
+  color: #0066CC;  /* #0066CC*/
+  text-decoration: none;
 }
 #sidebar .widget li a:hover{
- text-decoration:underline;
+  color: #292D56;  /* #0066CC*/
+  text-decoration:underline;
 }
 #sidebar .widgets .widget li:last-child,
 .widget li:last-child {
@@ -2360,7 +2365,7 @@ ul.opendev_taxonomy_widget_ul span:hover{
  margin-bottom: 10px;
  padding-bottom: 10px;
  border-bottom: 1px solid #eee;
- color: #999;
+ color: #888;
 }
 
 .widget .opendev-summary ol li:last-child {
@@ -2371,11 +2376,11 @@ ul.opendev_taxonomy_widget_ul span:hover{
 
 .widget .opendev-summary ol li a {
  text-decoration: none;
- color: #333;
+ color: #292D56;
 }
 
 .widget .opendev-summary ol li a:hover {
- color: #4683d2; /*6393D2, 2774da;*/
+ color: #6393D2; /*6393D2, 2774da;*/
  text-decoration:underline
 }
 .widget .od-tax-widget-tax-item {

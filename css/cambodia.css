@@ -12,24 +12,30 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Suwannaphum", "Open Sans" !important;
 }
 #cambodia-color, .cambodia-color{
-    color: #97D320;  /* #66cc00*/
+    color: #00A600;  /* #97D320; #7CB500 ; #66cc00*/
 }
 #cambodia-bgcolor, .cambodia-bgcolor{
     background: #97D320 !important
 }
-a, a:visited, #sidebar .widget li a,.map-sidebar a{
+.widgets #mekong-color, .widgets .mekong-color {
+    color: #00A600;  /* #0066CC*/
+}
+.widgets #mekong-color:hover, .widgets .mekong-color:hover{
+    color: #06323D;  /* #06323D #00A600 #0066CC*/
+}
+
+a, a:visited, #sidebar .widgets .widget li a, .widget li a,.map-sidebar a{
   /*color: #06323D;  /*#7BCC2E; #6393D2, #2774da;*/
- text-decoration:none
- text-decoration: none;
-  text-shadow: 0px 0px #97D320;
-  color: #7CB500;
+  text-decoration: none;
+  /*text-shadow: 0px 0px #97D320;*/
+  color: #00A600;
 }
 a:hover, #sidebar .widget li a:hover{
-	color: #12414E;
+	color: #06323D;
 	text-decoration:underline
 }
 a strong:hover {
-	color: #12414E;
+	color: #00A600;
 	text-decoration:underline
 }
 button,
@@ -100,26 +106,29 @@ tr:nth-child(2n+1) {
 }
 
 #news.page-section .section-map .mapgroup-container .mapgroup .map-nav-container .map-nav li a.active:after {
-	border-top: 10px solid #97d320;
+	border-top: 10px solid #00A600;
 }
 .interactive-map .interactive-map-layers  ul li {
- border-bottom: 1px solid #97D320;
+ border-bottom: 1px solid #00A600;
 }
 .interactive-map .interactive-map-layers  ul li a:hover {
-  color: #97D320;
+  color: #00A600;
 }
 .interactive-map .interactive-map-layers > ul >li > a.active {
-    border-bottom: 1px solid #97D320;
-    color: #97D320;
+    border-bottom: 1px solid #00A600;
+    color: #00A600;
+}
+.interactive-map .interactive-map-layers span:hover{
+  color: #00A600;
 }
 .interactive-map .interactive-map-layers .layer-item:hover .list-circle-o{
-  border: 2px solid #97D320;
+  border: 2px solid #00A600;
 }
 .interactive-map .interactive-map-layers .toggle-info i.active{
-  color: #97D320;
+  color: #00A600;
 }
 .color-line{
-  border: #97D320 solid 1px;
+  border: #00A600 solid 1px;
   margin: 0 0 5px;
   width: 99%;
   height: 0;
@@ -201,18 +210,18 @@ tr:nth-child(2n+1) {
   color: #12414E;
 }
 .top a{
-  color: #97D320 !important;
+  color: #00A600 !important;
 }
 
 .top a:active{
-  color: #97D320 !important;
+  color: #00A600 !important;
 }
 
 td.entry_title a:hover{
-  color: #97D320 ;
+  color: #06323D ;
 }
 td.entry_title a{
-	color: #12414E;
+	color: #00A600;
 }
 
 /* Cambodia collapse & expend */

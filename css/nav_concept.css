@@ -82,10 +82,10 @@
 }
 
 #cNavNew li .level2 li.cur>a, #cNavNew li .level2 li.act>a, #cNavNew li .level2 li:hover>a {
-  color: #0773B6;
+  color: #0066CC;
 }
 #cNavNew li .level2 li.notcur>a, #cNavNew li .level2 li.notact>a {
-  color: #0773B6;
+  color: #0066CC;
 }
 #cNavNew li .level3 {
   top: 29px;
@@ -94,10 +94,10 @@
   /* height: 29px; */
 }
 #cNavNew li .level3 li.cur>a, #cNavNew li .level3 li.act>a, #cNavNew li .level3 li:hover>a {
-  color: #0773B6;
+  color: #0066CC;
 }
 #cNavNew li .level3 li.notcur>a, #cNavNew li .level3 li.notact>a {
-  color: #0773B6;
+  color: #0066CC;
 }
 #cNavNew.level1 li:hover .level2, #cNavNew .level2>li:hover .level3 {
   display: block;
@@ -130,10 +130,10 @@
   top: 29px;
 }
 .blue #cNavNew li.cur>a, .blue #cNavNew li.act>a, .blue #cNavNew li:hover>a {
-  color: #0773B6;
+  color: #0066CC;
 }
 .blue #cNavNew li.notcur>a, .blue #cNavNew li.notact>a {
-  color: #0773B6;
+  color: #0066CC;
 }
 
 /*odm.css*/
@@ -370,7 +370,7 @@ li.top-topic {
 }
 .mainNav-inner ul.level1>li.act>a {
   padding-right: 12px;
-  color: #0773B6;
+  color: #0066CC;
   background: #fff;
   border-right: 1px solid #dddddd;
 }
