@@ -10,7 +10,8 @@
 				    <header class="single-post-header" class="clearfix">
     					<h1><?php the_title(); ?></h1>
     					<div class="categories">
-    						  <span class="lsf">&#9776;</span> <?php echo __( 'Filed under:', 'jeo' ); ?> <?php the_category(); ?>
+    						  <span class="lsf">&#9776;</span> <?php echo __( 'Filed under:', 'jeo' ); ?><?php the_category(); ?>
+							  <div style="display:none"><?php print_r(get_the_category()); ?></div>
     					</div>
 				    </header>
             		<?php
