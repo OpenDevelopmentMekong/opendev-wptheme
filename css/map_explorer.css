@@ -143,7 +143,7 @@ body.page-template-page-map-explorer{overflow: hidden;}
 	fill: currentColor;
 }
 .interactive-map .interactive-map-layers  ul li a:hover {
-  color: #6393D2;
+  color: #0066CC;
 }
 .interactive-map .interactive-map-layers  ul li a:before,
 .interactive-map .interactive-map-layers .cat-layers li:before {
@@ -214,14 +214,14 @@ body.page-template-page-map-explorer{overflow: hidden;}
 /* For top level of taxonomy */
 
 .interactive-map .interactive-map-layers > ul >li {
-  border-bottom: 1px solid #6393D2;
+  border-bottom: 1px solid #0066CC;
 }
 .interactive-map .interactive-map-layers > ul >li > a {
   text-transform: uppercase;
 }
 .interactive-map .interactive-map-layers > ul >li > a.active {
   border-bottom: 1px solid #6393D2;
-  color: #6393D2;
+  color: #0066CC;
 }
 .interactive-map .interactive-map-layers > ul > li > a:before,
 .interactive-map .interactive-map-layers  > ul > li > a.active:before {
@@ -265,7 +265,7 @@ body.page-template-page-map-explorer{overflow: hidden;}
   top: 2px;
 }
 .interactive-map .interactive-map-layers .layer-item:hover .list-circle-o{
-  border: 2px solid #6393D2;
+  border: 2px solid #0066CC;
 }
 .interactive-map .interactive-map-layers .layer-item .list-loading{
   display: none;
@@ -316,11 +316,11 @@ body.page-template-page-map-explorer{overflow: hidden;}
   top: -3px;
 }
 .interactive-map .interactive-map-layers .toggle-info i.active{
-  color: #6393D2;
+  color: #0066CC;
 }
 .interactive-map .interactive-map-layers span:hover{
-  /*border: 2px solid #6393D2;*/
-  color: #6393D2;
+  /*border: 2px solid #0066CC;*/
+  color: #0066CC;
 }
 .layer-item .legend{
   display: none
@@ -362,7 +362,7 @@ body.page-template-page-map-explorer{overflow: hidden;}
   cursor: move;
 }
 .color-line{
-  border: #6393D2 solid 1px;
+  border: #0066CC solid 1px;
   margin: 0 0 5px;
   width: 99%;
   height: 0;
@@ -484,7 +484,7 @@ div.cartodb-legend-stack{
   border: 0px solid #000000;
   width: auto;
   padding: 8px 10px;
-  background: #6393D2 none repeat scroll 0% 0%;
+  background: #0066CC none repeat scroll 0% 0%;
   margin-bottom: 1em;
   margin-top: -10px;
   float: right;
