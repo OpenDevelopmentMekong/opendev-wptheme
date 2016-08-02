@@ -27,13 +27,26 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="<?php bloginfo('charset'); ?>" />
+
 <?php if (have_posts()):while(have_posts()): the_post(); endwhile; endif;?>
-<meta property="og:title" content="<?php the_title(); ?>" />
-<meta property="og:description" content="<?php echo strip_tags(get_the_excerpt($post->ID)); ?>" />
-<meta property="og:site_name" content="<?php bloginfo('name'); ?>"/>
-<meta property="og:type" content="<?php echo get_post_type(); ?>" />
-<meta property="og:image:secure_url" content="<?php $img_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full', false); echo $img_src[0]; ?>" />
+<meta property="fb:app_id" content="1066174610071139">
 <meta property="og:url" content="<?php echo get_permalink()?>" />
+<meta property="og:site_name" content="<?php bloginfo('name'); ?>" />
+<meta property=og:title content="<?php the_title(); ?>" />
+<meta property=og:description content="<?php echo strip_tags(get_the_excerpt($post->ID)); ?>" />
+<meta property=og:type content="<?php echo get_post_type(); ?>" />
+<meta property=og:url content="<?php echo get_permalink()?>" />
+<meta property="og:image:secure_url" content="<?php $img_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full', false); echo $img_src[0]; ?>" />
+<meta property="og:image:width" content="980" />
+<meta property="og:image:height" content="560" />
+
+<meta name=twitter:site content=<?php bloginfo('name'); ?> />
+<meta name=twitter:title content="<?php the_title(); ?>" />
+<meta name=twitter:description content="<?php echo strip_tags(get_the_excerpt($post->ID)); ?>" />
+<meta name=twitter:image content="<?php $img_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full', false); echo $img_src[0]; ?>" />
+
+
+
 <title><?php
     global $page, $paged;
 
@@ -125,7 +138,7 @@
               else buildStyledTopTopicNav('en');
         ?>
 
-        <li class="one-line"><a class="library" href="http://<?php echo $ckanDomain; ?>/library_record<?php if ($country !='mekong') echo '?extras_odm_spatial_range=' . $country_short; ?>" target="_self"><?php _e("Publications Library"); ?><span class="cNavState"></span></a>
+        <li class="one-line"><a class="library" href="http://<?php echo $ckanDomain; ?>/library_record<?php if ($country !='mekong') echo '?extras_odm_spatial_range=' . $country_short; ?>" target="_self"><?php _e("Publications library"); ?><span class="cNavState"></span></a>
 
         </li>
 
