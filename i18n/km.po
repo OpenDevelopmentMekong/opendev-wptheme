@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ODM opendev-wptheme\n"
 "POT-Creation-Date: 2016-05-17 16:09+0200\n"
-"PO-Revision-Date: 2016-06-27 16:36+0200\n"
+"PO-Revision-Date: 2016-08-02 18:37+0700\n"
 "Last-Translator: Alex Corbi <a.corbi@gmail.com>\n"
 "Language-Team: Khmer (http://www.transifex.com/open-development-mekong/odm-opendev-wptheme/language/km/)\n"
 "MIME-Version: 1.0\n"
@@ -16,18 +16,22 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: km\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 1.8.4\n"
-"X-Poedit-Basepath: .\n"
+"X-Generator: Poedit 1.8.7\n"
+"X-Poedit-Basepath: ../../..\n"
 "X-Poedit-KeywordsList: _;_e;__;_n:1,2;_x:1,2c;_ex:1,2c\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPath-1: ..\n"
+"X-Poedit-SearchPath-0: themes/jeo-odm/i18n\n"
+"X-Poedit-SearchPath-1: themes/jeo-odm\n"
+"X-Poedit-SearchPath-2: languages/odm-localization-templete.php\n"
+"X-Poedit-SearchPath-3: plugins/reference-footnotes/reference-footnotes.php\n"
 
-#: ../Cambodia/page-forest-cover.php:19 ../single-announcement.php:23 ../single-topic.php:13 ../single.php:21
+#: ../Cambodia/page-forest-cover.php:19 ../single-announcement.php:23
+#: ../single-topic.php:13 ../single.php:21
 msgid "Filed under:"
 msgstr "ចំណាត់ថ្នាក់:"
 
-#: ../Cambodia/page-forest-cover.php:59 ../page.php:24 ../single-announcement.php:149 ../single-topic.php:37 ../single.php:82
+#: ../Cambodia/page-forest-cover.php:59 ../page.php:24
+#: ../single-announcement.php:149 ../single-topic.php:37 ../single.php:82
 msgid "Pages:"
 msgstr "ទំព័រ"
 
@@ -65,27 +69,33 @@ msgstr ""
 msgid "Archives"
 msgstr "បណ្ណសារ"
 
-#: ../archive-announcement.php:100 ../category-announcement.php:132 ../single-announcement.php:84
+#: ../archive-announcement.php:100 ../category-announcement.php:132
+#: ../single-announcement.php:84
 msgid "Download: "
 msgstr "ទាញយកៈ "
 
-#: ../archive-announcement.php:106 ../category-announcement.php:138 ../single-announcement.php:90
+#: ../archive-announcement.php:106 ../category-announcement.php:138
+#: ../single-announcement.php:90
 msgid "English PDF"
 msgstr " ភាសា​អង់​គ្លេស​ PDF"
 
-#: ../archive-announcement.php:111 ../category-announcement.php:143 ../single-announcement.php:95
+#: ../archive-announcement.php:111 ../category-announcement.php:143
+#: ../single-announcement.php:95
 msgid "English PDF not available"
 msgstr "ភាសា​អង់​គ្លេស​ពុំ​អាច​រក​បាន"
 
-#: ../archive-announcement.php:119 ../category-announcement.php:151 ../single-announcement.php:103
+#: ../archive-announcement.php:119 ../category-announcement.php:151
+#: ../single-announcement.php:103
 msgid "Khmer PDF"
 msgstr "ភាសា​ខ្មែរ​ PDF"
 
-#: ../archive-announcement.php:124 ../category-announcement.php:156 ../single-announcement.php:108
+#: ../archive-announcement.php:124 ../category-announcement.php:156
+#: ../single-announcement.php:108
 msgid "Khmer PDF not available"
 msgstr "ភាសា​ខ្មែរ​ពុំ​អាច​រក​បាន"
 
-#: ../archive-announcement.php:135 ../category-announcement.php:166 ../functions.php:163 ../loop-latest.php:19 ../loop.php:62
+#: ../archive-announcement.php:135 ../category-announcement.php:166
+#: ../functions.php:163 ../loop-latest.php:19 ../loop.php:62
 msgid "Read more"
 msgstr "អានបន្ថែម"
 
@@ -97,7 +107,9 @@ msgstr ""
 msgid "View all data results"
 msgstr ""
 
-#: ../category-announcement.php:72 ../category.php:63 ../functions.php:551 ../i18n/extra-strings.php:15 ../inc/live-search/live-search.php:22 extra-strings.php:15
+#: ../category-announcement.php:72 ../category.php:63 ../functions.php:551
+#: ../i18n/extra-strings.php:15 ../inc/live-search/live-search.php:22
+#: extra-strings.php:15
 msgid "News"
 msgstr "ព័ត៌មាន​"
 
@@ -117,7 +129,8 @@ msgstr "បន្ថែម..."
 msgid "View all maps"
 msgstr "មើលផែនទីទាំងអស់"
 
-#: ../flexible-posts-widget/opendev-announcements.php:73 ../section-sticky-posts.php:151
+#: ../flexible-posts-widget/opendev-announcements.php:73
+#: ../section-sticky-posts.php:151
 msgid "Keep reading"
 msgstr "អានបន្ត"
 
@@ -125,7 +138,8 @@ msgstr "អានបន្ត"
 msgid "See all"
 msgstr "មើលទាំងអស់"
 
-#: ../flexible-posts-widget/opendev-announcements.php:84 ../flexible-posts-widget/opendev-site-updates.php:36
+#: ../flexible-posts-widget/opendev-announcements.php:84
+#: ../flexible-posts-widget/opendev-site-updates.php:36
 msgid "No post found"
 msgstr "ពំុមានឃើញឯកសារទេ"
 
@@ -264,7 +278,8 @@ msgstr "ប្រធានបទ"
 msgid "Maps"
 msgstr "ផែនទី"
 
-#: ../functions.php:570 ../header.php:144 ../i18n/extra-strings.php:18 extra-strings.php:18
+#: ../functions.php:570 ../header.php:144 ../i18n/extra-strings.php:18
+#: extra-strings.php:18
 msgid "Data"
 msgstr "ទិន្នន័យ"
 
@@ -296,7 +311,8 @@ msgstr ""
 msgid "View dataset table"
 msgstr ""
 
-#: ../functions.php:1804 ../page-profiles-single-page.php:27 ../single-profiles.php:339
+#: ../functions.php:1804 ../page-profiles-single-page.php:27
+#: ../single-profiles.php:339
 msgid "Not found"
 msgstr "ព័ត៌មានពុំអាចរកបាន"
 
@@ -1042,7 +1058,9 @@ msgstr ""
 msgid "Related News"
 msgstr "ព័ត៌មានពាក់ព័ន្ធ"
 
-#: ../inc/od-related-recent-news-widget.php:138 ../inc/odm-taxonomy-widget.php:222 ../inc/query-resources-widget.php:89 ../inc/related-resources-widget.php:97
+#: ../inc/od-related-recent-news-widget.php:138
+#: ../inc/odm-taxonomy-widget.php:222 ../inc/query-resources-widget.php:89
+#: ../inc/related-resources-widget.php:97
 msgid "Title:"
 msgstr ""
 
@@ -1143,7 +1161,8 @@ msgstr ""
 msgid "Setting of Profiles Page"
 msgstr ""
 
-#: ../inc/profiles_posttype_registration.php:87 ../inc/profiles_posttype_registration.php:211
+#: ../inc/profiles_posttype_registration.php:87
+#: ../inc/profiles_posttype_registration.php:211
 msgid "ENGLISH"
 msgstr "អង់គ្លេស"
 
@@ -1151,7 +1170,8 @@ msgstr "អង់គ្លេស"
 msgid "CartoDB JSON URL (English)"
 msgstr ""
 
-#: ../inc/profiles_posttype_registration.php:99 ../inc/profiles_posttype_registration.php:128
+#: ../inc/profiles_posttype_registration.php:99
+#: ../inc/profiles_posttype_registration.php:128
 msgid "CartoDB visualization URL. E.g.: http://user.cartodb.com/api/v2/viz/621d23a0-5eaa-11e4-ab03-0e853d047bba/viz.json"
 msgstr ""
 
@@ -1159,7 +1179,8 @@ msgstr ""
 msgid "CSV Resource URL (English)"
 msgstr ""
 
-#: ../inc/profiles_posttype_registration.php:106 ../inc/profiles_posttype_registration.php:135
+#: ../inc/profiles_posttype_registration.php:106
+#: ../inc/profiles_posttype_registration.php:135
 msgid "CSV Resource of dataset on CKAN. Eg. https://data.opendevelopmentmekong.net/dataset/economic-land-concessions/resource/3b817bce-9823-493b-8429-e5233ba3bd87?type=dataset"
 msgstr ""
 
@@ -1167,7 +1188,8 @@ msgstr ""
 msgid "CSV Tracking URL (English)"
 msgstr ""
 
-#: ../inc/profiles_posttype_registration.php:113 ../inc/profiles_posttype_registration.php:142
+#: ../inc/profiles_posttype_registration.php:113
+#: ../inc/profiles_posttype_registration.php:142
 msgid "CSV Resource of tracking dataset on CKAN. Eg. https://data.opendevelopmentmekong.net/dataset/economic-land-concessions/resource/8cc0c651-8131-404e-bbce-7fe6af728f89?type=dataset"
 msgstr ""
 
@@ -1183,11 +1205,13 @@ msgstr ""
 msgid "CSV Tracking URL ("
 msgstr ""
 
-#: ../inc/profiles_posttype_registration.php:180 ../inc/profiles_posttype_registration.php:188
+#: ../inc/profiles_posttype_registration.php:180
+#: ../inc/profiles_posttype_registration.php:188
 msgid "The attributes of Resource Dataset that would like to display, separated by line breaks ("
 msgstr ""
 
-#: ../inc/profiles_posttype_registration.php:183 ../inc/profiles_posttype_registration.php:191
+#: ../inc/profiles_posttype_registration.php:183
+#: ../inc/profiles_posttype_registration.php:191
 msgid "The attributes of Tracking Resource that would like to display, separated by line breaks ("
 msgstr ""
 
@@ -1203,7 +1227,8 @@ msgstr ""
 msgid "Create Select Filter by Column Index (English)"
 msgstr ""
 
-#: ../inc/profiles_posttype_registration.php:232 ../inc/profiles_posttype_registration.php:269
+#: ../inc/profiles_posttype_registration.php:232
+#: ../inc/profiles_posttype_registration.php:269
 msgid "Filter selectors will create automatically by adding the column index and separated by comma. Maximum Filter selectors can create is three. Eg. Create filter selectors of Data Adjustment and Intended crop or project of ELC which have index 2 and 5"
 msgstr ""
 
@@ -1211,7 +1236,8 @@ msgstr ""
 msgid "Group Data in Column (English)"
 msgstr ""
 
-#: ../inc/profiles_posttype_registration.php:239 ../inc/profiles_posttype_registration.php:276
+#: ../inc/profiles_posttype_registration.php:239
+#: ../inc/profiles_posttype_registration.php:276
 msgid "Eg. To group data classification of ELC, based on the attributes sample provided, the index of data classification is: 5"
 msgstr ""
 
@@ -1219,7 +1245,8 @@ msgstr ""
 msgid "Related Profile Pages (English)"
 msgstr ""
 
-#: ../inc/profiles_posttype_registration.php:246 ../inc/profiles_posttype_registration.php:283
+#: ../inc/profiles_posttype_registration.php:246
+#: ../inc/profiles_posttype_registration.php:283
 msgid ""
 "Please add the links of profile pages that related (separated by new breaking line). Format: Title of Link|URL. <br/>eg.\n"
 "Economic Land Concessions|https://cambodia.opendevelopmentmekong.net/profiles/economic-land-concessions/"
@@ -1265,15 +1292,19 @@ msgstr ""
 msgid "CKAN Organization:"
 msgstr ""
 
-#: ../inc/query-resources-widget.php:95 ../inc/query-resources-widget.php:102 ../inc/related-resources-widget.php:101 ../inc/related-resources-widget.php:108
+#: ../inc/query-resources-widget.php:95 ../inc/query-resources-widget.php:102
+#: ../inc/related-resources-widget.php:101
+#: ../inc/related-resources-widget.php:108
 msgid "All"
 msgstr "ទាំងអស់"
 
-#: ../inc/query-resources-widget.php:100 ../inc/related-resources-widget.php:106
+#: ../inc/query-resources-widget.php:100
+#: ../inc/related-resources-widget.php:106
 msgid "CKAN Group:"
 msgstr ""
 
-#: ../inc/query-resources-widget.php:107 ../inc/related-resources-widget.php:113
+#: ../inc/query-resources-widget.php:107
+#: ../inc/related-resources-widget.php:113
 msgid "Limit:"
 msgstr ""
 
@@ -1546,7 +1577,8 @@ msgstr ""
 msgid "Separate tags with commas. Only 5 tags are allowed. "
 msgstr ""
 
-#: ../inc/theme-options.php:407 ../inc/theme-options.php:416 ../inc/theme-options.php:483
+#: ../inc/theme-options.php:407 ../inc/theme-options.php:416
+#: ../inc/theme-options.php:483
 msgid "None"
 msgstr ""
 
@@ -1772,7 +1804,8 @@ msgstr "លេខសម្គាល់ឯកសារ"
 msgid "Promulgation date"
 msgstr "កាលបរិច្ឆេទប្រកាសឱ្យប្រើ"
 
-#: ../page-laws.php:66 ../page-pdf-view.php:23 ../page-pdf-view.php:26 ../section-query-actions.php:25 ../single-profiles.php:197
+#: ../page-laws.php:66 ../page-pdf-view.php:23 ../page-pdf-view.php:26
+#: ../section-query-actions.php:25 ../single-profiles.php:197
 msgid "Download"
 msgstr "ទាញយក"
 
@@ -1932,7 +1965,8 @@ msgstr ""
 msgid "Hide resources details"
 msgstr ""
 
-#: ../single-announcement.php:69 ../single-announcement.php:72 ../single.php:41 ../single.php:44
+#: ../single-announcement.php:69 ../single-announcement.php:72 ../single.php:41
+#: ../single.php:44
 msgid "Summary translated by ODC Team"
 msgstr "ប្រែសម្រួលដោយក្រុមការងារអូឌីស៊ី"
 
@@ -1948,15 +1982,19 @@ msgstr "ស្លាក:"
 msgid "Latest articles on"
 msgstr ""
 
-#: ../single-profiles.php:124 ../single-profiles.php:126 ../single-profiles.php:164 ../single-profiles.php:166
+#: ../single-profiles.php:124 ../single-profiles.php:126
+#: ../single-profiles.php:164 ../single-profiles.php:166
 msgid "Total"
 msgstr "សរុប"
 
-#: ../single-profiles.php:124 ../single-profiles.php:126 ../single-profiles.php:164 ../single-profiles.php:166
+#: ../single-profiles.php:124 ../single-profiles.php:126
+#: ../single-profiles.php:164 ../single-profiles.php:166
 msgid "Listed"
 msgstr "មានក្នុងបញ្ជី"
 
-#: ../single-profiles.php:124 ../single-profiles.php:126 ../single-profiles.php:154 ../single-profiles.php:164 ../single-profiles.php:166
+#: ../single-profiles.php:124 ../single-profiles.php:126
+#: ../single-profiles.php:154 ../single-profiles.php:164
+#: ../single-profiles.php:166
 msgid ":"
 msgstr "៖"
 
