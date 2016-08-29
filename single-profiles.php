@@ -114,70 +114,74 @@ $ref_docs_tracking = array();
           else: ?>
       <div class="container">
           <div class="twelve columns">
-              <?php if($profiles){ ?>
-              <div class="total_listed">
-                <ul>
-                  <?php  // Display Total list
-                  $count_project =  array_count_values(array_map(function($value){return $value['map_id'];}, $profiles)); ?>
-                  <!-- List total of dataset by map_id as default-->
-                  <li><strong><?php if($lang == "kh" || $lang == "km")
-                             echo __("Total", "opendev").get_the_title(). __("Listed", "opendev"). __(":", "opendev");
-                          else
-                             echo __("Total", "opendev")." ".get_the_title()." ". __("Listed", "opendev")." ". __(":", "opendev");  ?>
-                      </strong>
-                      <strong><?php echo $count_project==""? convert_to_kh_number("0"):convert_to_kh_number(count($count_project));?></strong>
-                  </li>
+		  <?php
+	      if($profiles){
+	        // Display Total list
+	        $show_total_value = "";
+	        $count_project =  array_count_values(array_map(function($value){return array_key_exists('map_id', $value) ? $value['map_id'] : "";}, $profiles)); ?>
+	        <!-- List total of dataset by map_id as default-->
+					<?php if (count($count_project) > 1) {
+	                $show_total_value .= "<li><strong>";
+	                if($lang == "kh" || $lang == "km"):
+	                  $show_total_value .= __("Total", "opendev").get_the_title(). __("Listed", "opendev"). __(":", "opendev");
+	                  $show_total_value .= $count_project==""? convert_to_kh_number("0"):convert_to_kh_number(count($count_project));
+	                else:
+	                  $show_total_value .=  __("Total", "opendev")." ".get_the_title(). __(" listed", "opendev"). __(": ", "opendev");
+	                  $show_total_value .= $count_project==""? "0":count($count_project);
+	                endif;
+	                $show_total_value .= "</strong></li>";
+	              }
+	              $explode_total_number_by_attribute_name = explode("\r\n", $total_number_by_attribute_name);
+	              if($total_number_by_attribute_name!=""){
+	                foreach ($explode_total_number_by_attribute_name as $key => $total_attribute_name) {
+	                  if($total_attribute_name != "map_id" ){
+	                  //check if total number require to list by Specific value
+	                  $total_attributename = trim($total_attribute_name);
+	                  if (strpos($total_attribute_name, '[') !== FALSE){ //if march
+	                  $split_field_name_and_value = explode("[", $total_attributename);
+	                  $total_attributename = trim($split_field_name_and_value[0]); //eg. data_class
+	                  $total_by_specifit_value = str_replace("]", "", $split_field_name_and_value[1]);
+	                  $specifit_value = explode(',', $total_by_specifit_value);// explode to get: Government data complete
+	                  } //end strpos
+	                  $GLOBALS['total_attribute_name'] = $total_attributename;
+	                  $map_value = array_map(function($value){ return $value[$GLOBALS['total_attribute_name']];}, $profiles);
+	                  $count_number_by_attr =  array_count_values($map_value);
+	                  ?>
 
-                  <?php
-                  $explode_total_number_by_attribute_name = explode("\r\n", $total_number_by_attribute_name);
-                  if($total_number_by_attribute_name!=""){
-                      foreach ($explode_total_number_by_attribute_name as $key => $total_attribute_name) {
-                        if($total_attribute_name != "map_id" ){
-                          //check if total number require to list by Specific value
-                          $total_attributename = trim($total_attribute_name);
-                          if (strpos($total_attribute_name, '[') !== FALSE){ //if march
-                              $split_field_name_and_value = explode("[", $total_attributename);
-                              $total_attributename = trim($split_field_name_and_value[0]); //eg. data_class
-                              $total_by_specifit_value = str_replace("]", "", $split_field_name_and_value[1]);
-                              $specifit_value = explode(',', $total_by_specifit_value);// explode to get: Government data complete
-                          } //end strpos
-                          $GLOBALS['total_attribute_name'] = $total_attributename;
-                          $map_value = array_map(function($value){ return $value[$GLOBALS['total_attribute_name']];}, $profiles);
-                          $count_number_by_attr =  array_count_values($map_value);
-                          ?>
-
-                          <?php //count number by value: eg. Government data complete
-                              if(isset($specifit_value) && count($specifit_value) > 0){
-                                  foreach ($specifit_value as $field_value) {
-                                      $field_value = trim(str_replace('"', "",$field_value)); ?>
-                                          <li><?php _e($field_value, "opendev"); ?>
-                                                      <?php _e(":", "opendev"); ?>
-                                              <strong><?php echo $count_number_by_attr[$field_value]==""? convert_to_kh_number("0"):convert_to_kh_number($count_number_by_attr[$field_value]);?></strong>
-
-                                          </li>
-                                      <?php
-                                  }//end foreach
-                              }else { //count number by field name/attribute name: eg. map_id/developer
-                                 if ($total_attributename !="map_id") { ?>
-                                     <li>
-                                     <?php if($lang == "kh" || $lang == "km")
-                                              echo __("Total", "opendev").$DATASET_ATTRIBUTE[$total_attributename].__("Listed", "opendev").__(":", "opendev");
-                                           else
-                                              echo __("Total", "opendev")." ".$DATASET_ATTRIBUTE[$total_attributename]." ". __("Listed", "opendev")." ".__(":", "opendev"); ?>
-
-                                          <strong><?php echo $total_attributename==""? convert_to_kh_number("0"):convert_to_kh_number(count($count_number_by_attr));?></strong>
-                                     </li>
-                                 <?php }
-                              }//end if $specifit_value
-                        }//if not map_id
-                      }//foreach $explode_total_number_by_attribute_name
-                  }//if exist
-                  ?>
-                  </ul>
-              </div>
-              <?php } ?>
+	                  <?php //count number by value: eg. Government data complete
+	                  if(isset($specifit_value) && count($specifit_value) > 0){
+	                    foreach ($specifit_value as $field_value) {
+	                      $field_value = trim(str_replace('"', "",$field_value));
+	                      $show_total_value .= '<li>'.__($field_value, "opendev"). __(": ", "opendev");
+	                      $show_total_value .= '<strong>'. $count_number_by_attr[$field_value]==""? convert_to_kh_number("0"):convert_to_kh_number($count_number_by_attr[$field_value]).'</strong></li>';
+	                    }//end foreach
+	                  }else { //count number by field name/attribute name: eg. map_id/developer
+	                    if ($total_attributename !="map_id") {
+	                      $show_total_value .= "<li>";
+	                      if($lang == "kh" || $lang == "km"):
+	                        $show_total_value .= __("Total", "opendev").$DATASET_ATTRIBUTE[$total_attributename].__("Listed", "opendev").__(":", "opendev");
+	                        $show_total_value .= '<strong>'.$total_attributename==""? convert_to_kh_number("0"):convert_to_kh_number(count($count_number_by_attr)).'</strong>';
+	                      else:
+	                        $show_total_value .=  __("Total", "opendev")." ".$DATASET_ATTRIBUTE[$total_attributename]." ". __(" listed", "opendev").__(": ", "opendev");
+	                        $show_total_value .= '<strong>'.$total_attributename==""? "0": count($count_number_by_attr).'</strong>';
+	                      endif;
+	                      $show_total_value .= "</li>";
+	                    }
+	                  }//end if $specifit_value
+	                }//if not map_id
+	              }//foreach $explode_total_number_by_attribute_name
+	              }//if exist
+	              if($show_total_value){
+	                echo '<div class="total_listed">';
+	                  echo "<ul>";
+	                    echo $show_total_value;
+	                  echo "</ul>";
+	                echo "</div>";
+	              }
+	      }
+	      ?>
           </div>
-    			<div class="nine columns">
+    	  <div class="nine columns">
             <div id="profiles_map" class="profiles_map"></div>
           </div>
           <div class="three columns">
