@@ -313,6 +313,8 @@ $ref_docs_tracking = array();
               <tbody>
                 <?php
                 if($profiles){
+                  //Lis the field names that contain number without comma eg. 10000
+                  $field_names_no_need_comma = array("cdc_num", "year", "sub_decree");
                   foreach ($profiles as $profile):  ?>
                     <tr>
                       <td class="td-value"><?php echo $profile["map_id"];?></td>
@@ -341,41 +343,50 @@ $ref_docs_tracking = array();
                         }else if($key == "issuedate"){?>
                             <td><div class="td-value"><?php
                                 $issuedate = str_replace("T00:00:00", "", $profile[$key]);
-                              echo $profile[$key] == ""? __("Not found", "opendev"): str_replace(";", "<br/>", trim($issuedate));
+                                echo $profile_value == ""? __("Not found", "opendev"): str_replace(";", "<br/>", __(trim($profile_value), "opendev"));
                               ?></div>
                             </td>
                           <?php
-                        }else if(in_array($key, array("cdc_num", "sub-decree", "year"))) {
+                        }else if(in_array($key, array("cdc_num", "year"))) {
                             if(CURRENT_LANGUAGE =="km"){
                                 $profile_value = convert_to_kh_number($profile[$key]);
                             }else {
                                 $profile_value = $profile[$key];
                             }  ?>
                             <td><div class="td-value"><?php
-                              echo $profile_value == ""? __("Not found", "opendev"): str_replace(";", "<br/>", trim($profile_value));
+                              echo $profile_value == ""? __("Not found", "opendev"): str_replace(";", "<br/>", __(trim($profile_value), "opendev"));
                               ?></div>
                             </td>
                         <?php
                         }else{
-                            $profile_val = str_replace("T00:00:00", "", $profile[$key]);
+                            $profile_val = $profile[$key];
                             if(CURRENT_LANGUAGE =="km"){
                                 if (is_numeric($profile_val)) {
                                     $profile_value = convert_to_kh_number(str_replace(".00", "", number_format($profile_val, 2, '.', ',')));
+                                }elseif( strpos($profile[$key], 'T00:00:00') !== false ) {
+                                    $profile_date = str_replace("T00:00:00", "", $profile[$key]);
+                                    $profile_value =  convert_date_to_kh_date(date("d/m/Y", strtotime($profile_date)), "/");
+                                }else if(in_array($key, $field_names_no_need_comma)) {
+                                    $profile_value = convert_to_kh_number($profile[$key]);
                                 }else{
                                     $profile_value = str_replace("__"," ", $profile_val);
                                 }
                             }else{
                                 if (is_numeric($profile_val)) {
                                     $profile_value = str_replace(".00", "", number_format($profile_val, 2, '.', ','));
+                                }elseif( strpos($profile[$key], 'T00:00:00') !== false ) {
+                                    $profile_date = str_replace("T00:00:00", "", $profile[$key]);
+                                    $profile_value =  date("d F Y", strtotime($profile_date));
+                                }elseif(in_array($key, $field_names_no_need_comma)) {
+                                    $profile_value = str_replace(",", "",  $profile[$key]);
                                 }else{
                                     $profile_value = str_replace("__",", ",$profile_val);
                                 }
                             }
-
                             $profile_value = str_replace(";", "<br/>", trim($profile_value));
                             ?>
                               <td><div class="td-value"><?php
-                                echo $profile[$key] == ""? __("Not found", "opendev"): str_replace(";", "<br/>", trim($profile_value));
+                                echo $profile[$key] == ""? __("Not found", "opendev"): str_replace(";", "<br/>", __(trim($profile_value), "opendev"));
                                 ?></div>
                               </td>
                             <?php
@@ -506,9 +517,9 @@ jQuery(document).ready(function($) {
        <?php if($lang == "kh" || $lang == "km"){ ?>
        , "oLanguage": {
            "sLengthMenu": 'បង្ហាញទិន្នន័យចំនួន <select>'+
-               '<option value="10">10</option>'+
-               '<option value="25">20</option>'+
-               '<option value="50">50</option>'+
+               '<option value="10">១០</option>'+
+               '<option value="25">២០</option>'+
+               '<option value="50">៥០</option>'+
                '<option value="-1">ទាំងអស់</option>'+
              '</select> ក្នុងមួយទំព័រ',
            "sZeroRecords": "ព័ត៌មានពុំអាចរកបាន",
